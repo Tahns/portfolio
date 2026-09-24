@@ -30,6 +30,7 @@ window.PORTFOLIO = {
     { label: "Formation visée", valeur: "Licence / bachelor RH" },
     { label: "Début", valeur: "Septembre 2027" },
     { label: "Secteur géographique", valeur: "Lille et métropole" },
+    { label: "Mobilité", valeur: "Permis B" },
   ],
 
   liens: {
@@ -100,11 +101,62 @@ window.PORTFOLIO = {
     },
   ],
 
+  // icone possible : users, briefcase, box, tools, monitor, code, sparkles
   competences: [
-    { groupe: "RH & juridique", items: ["Gestion de la paie", "Droit social"] },
-    { groupe: "Gestion & administration", items: ["CRM", "Tableaux de bord", "Parapheur iXBus", "Démarche qualité Qualibail", "Gestion de parc automobile (CarFleet)"] },
-    { groupe: "Outils", items: ["Word", "Excel", "PowerPoint", "HTML / CSS / JavaScript"] },
-    { groupe: "Qualités", items: ["Rigoureux", "Autonome", "Curieux", "Dynamique"] },
+    {
+      groupe: "RH & juridique",
+      icone: "users",
+      items: ["Gestion de la paie", "Droit social", "Veille législative et parlementaire"],
+    },
+    {
+      groupe: "Gestion & administration",
+      icone: "briefcase",
+      items: [
+        "Gestion de la correspondance",
+        "Mise à jour du CRM",
+        "Suivi de tableaux de bord",
+        "Circuits de validation (parapheur iXBus)",
+        "Démarche qualité Qualibail",
+        "Gestion de parc automobile (CarFleet)",
+        "Suivi des bons de commande",
+        "Planification de projet",
+        "Coordination avec les équipes",
+      ],
+    },
+    {
+      groupe: "Logistique & terrain",
+      icone: "box",
+      items: [
+        "Préparation et contrôle de commandes",
+        "Respect des délais et standards qualité",
+        "Diagnostic de pannes",
+        "Maintenance préventive et corrective",
+        "Suivi des VGP",
+        "Habilitation électrique BT",
+      ],
+    },
+    {
+      groupe: "Bureautique & logiciels",
+      icone: "monitor",
+      items: ["Word", "Excel", "PowerPoint", "SQL", "Autodesk Inventor", "SolidWorks", "Onshape", "Reaper (audio)"],
+    },
+    {
+      groupe: "Numérique & IA",
+      icone: "code",
+      items: [
+        "HTML / CSS / JavaScript",
+        "Node.js",
+        "GitHub & GitHub Actions",
+        "Automatisation de la collecte de données",
+        "Open data (Assemblée nationale, Insee)",
+        "Fondamentaux de l'IA",
+      ],
+    },
+    {
+      groupe: "Qualités",
+      icone: "sparkles",
+      items: ["Rigoureux", "Autonome", "Dynamique", "Curieux", "Créatif", "Discret", "Adaptable"],
+    },
   ],
 
   projets: [
