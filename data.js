@@ -13,6 +13,25 @@ window.PORTFOLIO = {
   photo: "", // ex : "photo.jpg" (dépose le fichier dans le dépôt) — sinon tes initiales s'affichent
   disponible: "Recherche alternance RH · Droit social & Paie · rentrée 2027",
 
+  // Phrases qui défilent sous ton nom
+  roles: ["Futur alternant RH", "Droit social & paie", "Assistant d'agence", "Ancien technicien de maintenance"],
+
+  // Chiffres clés affichés en haut (valeur + libellé)
+  chiffres: [
+    { valeur: 4, suffixe: "+", libelle: "années d'expérience terrain" },
+    { valeur: 2, suffixe: "", libelle: "BTS en alternance" },
+    { valeur: 3, suffixe: "", libelle: "langues" },
+    { valeur: 2027, suffixe: "", libelle: "disponible en septembre" },
+  ],
+
+  // Encadré « Ce que je recherche »
+  recherche: [
+    { label: "Poste", valeur: "Alternance RH — droit social & paie" },
+    { label: "Formation visée", valeur: "Licence / bachelor RH" },
+    { label: "Début", valeur: "Septembre 2027" },
+    { label: "Secteur géographique", valeur: "Lille et métropole" },
+  ],
+
   liens: {
     linkedin: "https://www.linkedin.com/in/leo-dellouve/",
     github: "https://github.com/Tahns",
@@ -31,6 +50,7 @@ window.PORTFOLIO = {
       poste: "Assistant d'agence — alternance",
       entreprise: "Partenord Habitat · Lille",
       periode: "Sept. 2025 — Aujourd'hui",
+      actuel: true,
       description: "Rattaché au directeur d'agence, dans le cadre du BTS Gestion de la PME.",
       missions: [
         "Gestion de la correspondance et mise à jour du CRM",
