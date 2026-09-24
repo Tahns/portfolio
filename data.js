@@ -20,7 +20,7 @@ window.PORTFOLIO = {
   chiffres: [
     { valeur: 4, suffixe: "+", libelle: "années d'expérience terrain" },
     { valeur: 2, suffixe: "", libelle: "BTS en alternance" },
-    { valeur: 3, suffixe: "", libelle: "langues" },
+    { valeur: 600, suffixe: "+", libelle: "locataires relancés (enquête OPS)" },
     { valeur: 2027, suffixe: "", libelle: "disponible en septembre" },
   ],
 
@@ -52,12 +52,16 @@ window.PORTFOLIO = {
       entreprise: "Partenord Habitat · Lille",
       periode: "Sept. 2025 — Aujourd'hui",
       actuel: true,
-      description: "Rattaché au directeur d'agence, dans le cadre du BTS Gestion de la PME.",
+      description:
+        "Rattaché au directeur d'agence, j'occupe un rôle d'interface : collecter, fiabiliser et faire circuler l'information de l'agence, dans le cadre du BTS Gestion de la PME.",
       missions: [
-        "Gestion de la correspondance et mise à jour du CRM",
-        "Suivi des tableaux de bord et validation des documents via le parapheur iXBus",
-        "Application de la démarche qualité Qualibail",
-        "Gestion du parc automobile de l'agence (5 véhicules, Lille et Lomme) : validation des réservations, suivi de l'entretien via CarFleet",
+        "Répartition et suivi du courrier, dont les demandes institutionnelles (mairies, élus) : accusés de réception, délais de réponse, circuit de signature via le parapheur iXBus",
+        "Mise à jour de la GRC et des tableaux de bord de l'agence",
+        "Campagne de relance réglementaire (enquête OPS) auprès de plus de 600 locataires",
+        "Gestion de la flotte automobile de l'agence (Lille et Lomme) : réservations CarFleet, révisions et réparations avec le prestataire Stellantis",
+        "Bons de commande fournisseurs et suivi logistique",
+        "Application des engagements de service Qualibail (certification AFNOR)",
+        "Relais interne de l'agence : référent RH, logistique et correspondant informatique",
       ],
     },
     {
@@ -80,6 +84,61 @@ window.PORTFOLIO = {
       periode: "Sept. 2022 — Avr. 2024",
       description:
         "Maintenance de matériel de location professionnel : diagnostic de pannes, entretien préventif et réparations.",
+    },
+  ],
+
+  // Missions phares, affichées sous forme de cartes avec un chiffre clé
+  realisations: [
+    {
+      titre: "Campagne de relance — enquête OPS",
+      contexte:
+        "Enquête réglementaire obligatoire (loi du 4 mars 1996) : les locataires doivent transmettre leur avis d'imposition. On m'a confié la relance des locataires en non-réponse.",
+      kpi: { valeur: "600+", libelle: "locataires relancés · environ 60 % des avis manquants récupérés" },
+      actions: [
+        "Ciblage à partir du fichier OPS et vérification des coordonnées dans IKOS",
+        "Stratégie multicanale : e-mails en copie cachée, campagne SMS, publipostage prêt en renfort",
+        "Enregistrement des avis reçus dans les comptes locataires",
+        "Remontée des dossiers injoignables à l'assistante sociale",
+      ],
+      outils: ["IKOS", "Excel", "Outlook", "Word (publipostage)", "Campagne SMS", "RGPD"],
+    },
+    {
+      titre: "Maintenance de la flotte automobile",
+      contexte:
+        "Cinq véhicules de l'agence signalaient une révision à faire, dont deux avec un bruit suspect. Objectif : tout faire réviser sans paralyser l'activité des équipes.",
+      kpi: { valeur: "5", libelle: "véhicules planifiés en révision chez Stellantis, sans interrompre l'activité" },
+      actions: [
+        "Contrôle du parc et priorisation des interventions",
+        "Prise de rendez-vous auprès du prestataire dans le cadre du contrat d'entretien",
+        "Planning de dépôts échelonnés et navettes organisées avec une collègue",
+        "Explication technique de la panne au réceptionnaire pour obtenir un diagnostic fiable",
+      ],
+      outils: ["CarFleet", "Outlook (agenda partagé)", "Relation fournisseur"],
+    },
+    {
+      titre: "Cartographie des risques de l'agence",
+      contexte:
+        "Dans le cadre de l'épreuve E5, recensement et évaluation des risques et dysfonctionnements de l'agence de Lille et de l'antenne de Lomme.",
+      kpi: { valeur: "16", libelle: "risques et dysfonctionnements analysés sur 8 familles" },
+      actions: [
+        "Notation de chaque risque : gravité × probabilité (score sur 16) et faisabilité",
+        "Hiérarchisation dans une matrice et choix d'un risque prioritaire : le risque routier lié au parc automobile",
+        "Analyse des causes (pas de règle de plein au retour, clés et cartes carburant sans traçabilité…)",
+      ],
+      outils: ["Matrice des risques", "SST", "RGPD / cybersécurité"],
+    },
+    {
+      titre: "Analyse de l'entreprise et démarche qualité",
+      contexte:
+        "Dossier d'analyse de Partenord Habitat, premier bailleur social du Nord : environnement, organisation, management et gestion des risques.",
+      kpi: { valeur: "Qualibail", libelle: "engagements de service étudiés et appliqués au quotidien" },
+      actions: [
+        "Analyse SWOT et chaîne de valeur de l'organisme",
+        "Analyse managériale : structure, style de management, modes de coordination",
+        "Logigramme du traitement d'une demande de logement",
+        "Étude de la démarche qualité (logique PDCA) et des moyens de prévention des risques",
+      ],
+      outils: ["SWOT", "Logigramme", "PDCA", "Analyse managériale"],
     },
   ],
 
@@ -106,19 +165,30 @@ window.PORTFOLIO = {
     {
       groupe: "RH & juridique",
       icone: "users",
-      items: ["Gestion de la paie", "Droit social", "Veille législative et parlementaire"],
+      items: [
+        "Gestion de la paie",
+        "Droit social",
+        "Référent RH de l'agence",
+        "Protection des données (RGPD)",
+        "Cadre réglementaire du logement social",
+        "Veille législative et parlementaire",
+      ],
     },
     {
       groupe: "Gestion & administration",
       icone: "briefcase",
       items: [
-        "Gestion de la correspondance",
-        "Mise à jour du CRM",
+        "Gestion du courrier et des délais de réponse",
+        "Mise à jour de la GRC / CRM",
+        "Relances et campagnes multicanales",
+        "Relation fournisseurs (contrat d'entretien)",
         "Suivi de tableaux de bord",
         "Circuits de validation (parapheur iXBus)",
         "Démarche qualité Qualibail",
         "Gestion de parc automobile (CarFleet)",
-        "Suivi des bons de commande",
+        "Bons de commande",
+        "Analyse et cartographie des risques",
+        "Analyse SWOT et logigrammes",
         "Planification de projet",
         "Coordination avec les équipes",
       ],
@@ -138,7 +208,7 @@ window.PORTFOLIO = {
     {
       groupe: "Bureautique & logiciels",
       icone: "monitor",
-      items: ["Word", "Excel", "PowerPoint", "SQL", "Autodesk Inventor", "SolidWorks", "Onshape", "Reaper (audio)"],
+      items: ["IKOS (gestion locative)", "Word (publipostage)", "Excel", "PowerPoint", "Outlook", "Campagne SMS", "SQL", "Autodesk Inventor", "SolidWorks", "Onshape", "Reaper (audio)"],
     },
     {
       groupe: "Numérique & IA",
@@ -155,7 +225,7 @@ window.PORTFOLIO = {
     {
       groupe: "Qualités",
       icone: "sparkles",
-      items: ["Rigoureux", "Autonome", "Dynamique", "Curieux", "Créatif", "Discret", "Adaptable"],
+      items: ["Rigoureux", "Autonome", "Persévérant", "Écoute active", "Communication écrite et orale", "Sens des priorités", "Dynamique", "Curieux", "Créatif", "Discret", "Adaptable"],
     },
   ],
 

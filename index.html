@@ -309,6 +309,23 @@
       padding: 3px 10px; border-radius: 999px; color: #fff; background: var(--grad); margin-left: 10px; vertical-align: 3px;
     }
 
+    /* Réalisations */
+    .real { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .real .card { display: flex; flex-direction: column; gap: 14px; }
+    .real .kpi { display: flex; align-items: baseline; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+    .real .kpi-val { font-size: clamp(36px, 4.5vw, 52px); font-weight: 800; letter-spacing: -.04em; line-height: 1; white-space: nowrap; }
+    .real .kpi-lbl { color: var(--muted); font-size: 14px; font-weight: 600; line-height: 1.4; }
+    .real h3 { font-size: 21px; margin: 0; }
+    .real .ctx { color: var(--muted); margin: 0; }
+    .real ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .real li { position: relative; padding-left: 26px; }
+    .real li::before {
+      content: ""; position: absolute; left: 2px; top: .45em; width: 11px; height: 6px;
+      border-left: 2px solid var(--a2); border-bottom: 2px solid var(--a2); transform: rotate(-45deg);
+    }
+    .real .chips { margin-top: auto; padding-top: 6px; }
+    .real .chip { font-size: 12px; }
+
     /* Formation */
     .edu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .edu .year { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 18px; font-variant-numeric: tabular-nums; }
@@ -389,6 +406,7 @@
       .bento .small { grid-column: span 3; }
       .bento .small:last-child:nth-child(odd) { grid-column: span 6; }
       .edu { grid-template-columns: 1fr; }
+      .real { grid-template-columns: 1fr; }
       .project { grid-template-columns: 1fr; }
       .p-visual { min-height: 220px; border-left: 0; border-bottom: 1px solid var(--border); order: -1; }
       .stats { grid-template-columns: repeat(2, 1fr); }
@@ -437,6 +455,7 @@
   <nav aria-label="Navigation principale">
     <a href="#apropos" class="hide-sm">À propos</a>
     <a href="#parcours">Parcours</a>
+    <a href="#realisations" class="hide-sm">Réalisations</a>
     <a href="#competences">Compétences</a>
     <a href="#projets" class="hide-sm">Projet</a>
     <a href="#contact">Contact</a>
@@ -570,6 +589,25 @@
                 </div>
               </div>`;
             }).join("")}
+          </div>
+        </section>`);
+    }
+
+    // Réalisations
+    if (list(d.realisations).length) {
+      sections.push(`
+        <section id="realisations">
+          <div class="kicker reveal">Réalisations</div>
+          <h2 class="reveal">Des missions concrètes, <span class="serif grad-text">des résultats mesurables.</span></h2>
+          <div class="real">
+            ${d.realisations.map((r, i) => `
+              <article class="card reveal" style="--d:${(i % 2) * .08}s">
+                ${r.kpi ? `<div class="kpi"><span class="kpi-val grad-text">${esc(r.kpi.valeur)}</span><span class="kpi-lbl">${esc(r.kpi.libelle)}</span></div>` : ""}
+                <h3>${esc(r.titre)}</h3>
+                ${r.contexte ? `<p class="ctx">${esc(r.contexte)}</p>` : ""}
+                ${list(r.actions).length ? `<ul>${r.actions.map(a => `<li>${esc(a)}</li>`).join("")}</ul>` : ""}
+                ${list(r.outils).length ? `<div class="chips">${r.outils.map(o => `<span class="chip">${esc(o)}</span>`).join("")}</div>` : ""}
+              </article>`).join("")}
           </div>
         </section>`);
     }
@@ -734,7 +772,7 @@
       bar.style.transform = `scaleX(${h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight)})`;
       let current = "";
       secs.forEach(s => { if (s.getBoundingClientRect().top < innerHeight * .4) current = s.id; });
-      if (current === "formation") current = "parcours";
+      if (current === "formation") current = "realisations";
       navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + current));
     };
     addEventListener("scroll", onScroll, { passive: true });
