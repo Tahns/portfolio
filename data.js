@@ -13,15 +13,37 @@ window.PORTFOLIO = {
   photo: "", // ex : "photo.jpg" (dépose le fichier dans le dépôt) — sinon tes initiales s'affichent
   disponible: "Recherche alternance RH · Droit social & Paie · rentrée 2027",
 
-  // Phrases qui défilent sous ton nom
-  roles: ["Futur alternant RH", "Droit social & paie", "Assistant d'agence", "Ancien technicien de maintenance"],
-
   // Chiffres clés affichés en haut (valeur + libellé)
   chiffres: [
     { valeur: 4, suffixe: "+", libelle: "années d'expérience terrain" },
     { valeur: 2, suffixe: "", libelle: "BTS en alternance" },
     { valeur: 600, suffixe: "+", libelle: "locataires relancés (enquête OPS)" },
     { valeur: 2027, suffixe: "", libelle: "disponible en septembre" },
+  ],
+
+  // « Ce qui me définit » : une qualité, illustrée par une expérience réelle
+  // icone possible : target, message, lock, shuffle
+  valeurs: [
+    {
+      titre: "Rigueur",
+      icone: "target",
+      texte: "Délais de réponse suivis, GRC et tableaux de bord tenus à jour, dossiers tracés de bout en bout.",
+    },
+    {
+      titre: "Écoute",
+      icone: "message",
+      texte: "Au contact quotidien des locataires, des collègues et des prestataires, je reformule pour bien comprendre chaque besoin.",
+    },
+    {
+      titre: "Discrétion",
+      icone: "lock",
+      texte: "Je manipule des données personnelles sensibles (revenus, situations familiales) dans le strict respect du RGPD.",
+    },
+    {
+      titre: "Adaptabilité",
+      icone: "shuffle",
+      texte: "De la maintenance industrielle à la gestion administrative puis aux RH : j'apprends vite et je m'investis.",
+    },
   ],
 
   // Encadré « Ce que je recherche »

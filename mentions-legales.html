@@ -11,44 +11,38 @@
   <link rel="stylesheet" href="fonts/fonts.css">
   <style>
     :root {
-      --bg: #0b0a12; --surface: rgba(255,255,255,.04); --border: rgba(255,255,255,.09);
-      --text: #f4f2fb; --muted: #a6a2b8; --a1: #8b5cf6; --a2: #ec4899; --a3: #f59e0b;
-      color-scheme: dark;
-    }
-    :root[data-theme="light"] {
-      --bg: #fbfaff; --surface: rgba(255,255,255,.8); --border: rgba(20,16,40,.1);
-      --text: #16131f; --muted: #5b566e; --a1: #7c3aed; --a2: #db2777; --a3: #d97706;
+      --bg: #f6f2ea; --surface: #fffdf9; --border: #e3dacb; --ink: #1d2b36;
+      --text: #2a3540; --muted: #5f6a73; --primary: #1f4a5c; --accent: #b85c3f; --sage: #5f7f6a;
       color-scheme: light;
+    }
+    :root[data-theme="dark"] {
+      --bg: #141a1f; --surface: #1d252c; --border: #2c353d; --ink: #f1ece3;
+      --text: #dcd6cc; --muted: #a2a8a8; --primary: #8dbccb; --accent: #e39a7f; --sage: #9dbba6;
+      color-scheme: dark;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0; background: var(--bg); color: var(--text);
       font: 16px/1.7 "Plus Jakarta Sans", system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased;
-      background-image: radial-gradient(700px 400px at 10% -10%, color-mix(in srgb, var(--a1) 30%, transparent), transparent 70%),
-                        radial-gradient(600px 400px at 100% 0%, color-mix(in srgb, var(--a2) 20%, transparent), transparent 70%);
-      background-repeat: no-repeat;
     }
     .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
-    a { color: var(--text); text-decoration-color: var(--a2); text-underline-offset: 3px; }
+    a { color: var(--primary); text-decoration-color: var(--accent); text-underline-offset: 3px; }
     .back { display: inline-flex; gap: 8px; font-weight: 700; font-size: 14px; text-decoration: none; color: var(--muted); }
-    .back:hover { color: var(--text); }
-    h1 { font-size: clamp(36px, 7vw, 56px); line-height: 1.05; letter-spacing: -.035em; margin: 32px 0 8px; }
-    h1 em {
-      font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
-      background: linear-gradient(100deg, var(--a1), var(--a2) 50%, var(--a3)); -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
+    .back:hover { color: var(--ink); }
+    h1 { font: 500 clamp(36px, 7vw, 56px)/1.05 Fraunces, Georgia, serif; letter-spacing: -.02em; margin: 32px 0 8px; color: var(--ink); }
+    h1 em { font-style: italic; font-weight: 400; color: var(--primary); }
     .updated { color: var(--muted); font-size: 14px; margin: 0 0 40px; }
     section { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px 28px; margin-bottom: 16px; }
-    h2 { font-size: 20px; letter-spacing: -.01em; margin: 0 0 12px; }
+    h2 { font: 600 21px Fraunces, Georgia, serif; margin: 0 0 12px; color: var(--ink); }
     h3 { font-size: 16px; margin: 20px 0 6px; }
     p, li { color: var(--muted); }
     p { margin: 0 0 10px; }
     ul { margin: 0 0 10px; padding-left: 20px; }
     li { margin: 4px 0; }
-    strong { color: var(--text); }
+    strong { color: var(--ink); }
     .ok { display: grid; gap: 8px; list-style: none; padding: 0; }
     .ok li { padding-left: 28px; position: relative; }
-    .ok li::before { content: "✓"; position: absolute; left: 4px; font-weight: 800; color: #22c55e; }
+    .ok li::before { content: "✓"; position: absolute; left: 4px; font-weight: 800; color: var(--sage); }
     @media (max-width: 640px) { .wrap { padding: 32px 16px 64px; } section { padding: 20px; } }
   </style>
 </head>
@@ -103,7 +97,7 @@
     <section>
       <h2>Propriété intellectuelle</h2>
       <p>Les textes du site sont la propriété de leur auteur. Les noms des entreprises et organismes cités (Partenord Habitat, Kiloutou, Fives, Picnic, Stellantis…) appartiennent à leurs titulaires respectifs : ils servent uniquement à décrire mon parcours et n'impliquent aucune approbation de leur part. Les informations sur mes employeurs se limitent à des éléments publics et à la description de mes missions.</p>
-      <p>Polices Plus Jakarta Sans et Instrument Serif : licence SIL Open Font License 1.1.</p>
+      <p>Polices Plus Jakarta Sans et Fraunces : licence SIL Open Font License 1.1.</p>
     </section>
   </main>
 
