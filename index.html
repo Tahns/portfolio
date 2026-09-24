@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio</title>
-  <meta name="description" content="Portfolio — parcours, compétences et projets.">
+  <meta name="description" content="Léo Dellouve — technicien en maintenance des systèmes et développeur web autodidacte. Parcours, compétences et projets.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
@@ -80,6 +80,11 @@
       width: 160px; height: 160px; border-radius: 28px; object-fit: cover;
       border: 1px solid var(--line); box-shadow: var(--shadow);
     }
+    .monogram {
+      width: 160px; height: 160px; border-radius: 28px; display: grid; place-items: center;
+      background: var(--accent); color: var(--bg); box-shadow: var(--shadow);
+      font-family: Fraunces, Georgia, serif; font-size: 56px; font-weight: 600; letter-spacing: -.02em;
+    }
     .badge {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 13px; font-weight: 500; color: var(--accent);
@@ -152,7 +157,7 @@
       .wrap { padding: 0 16px; }
       nav .links { display: none; }
       .hero { grid-template-columns: 1fr; padding: 48px 0 40px; gap: 24px; }
-      .hero img { width: 96px; height: 96px; border-radius: 20px; order: -1; }
+      .hero img, .monogram { width: 96px; height: 96px; border-radius: 20px; order: -1; font-size: 34px; }
       .item, .skill-row { grid-template-columns: 1fr; gap: 4px; }
     }
   </style>
@@ -180,6 +185,7 @@
     <section id="competences"></section>
     <section id="projets"></section>
     <section id="langues"></section>
+    <section id="interets"></section>
     <section class="contact" id="contact"></section>
   </main>
   <footer id="footer"></footer>
@@ -227,7 +233,7 @@
         <p class="pitch">${esc(d.accroche)}</p>
         <div class="actions">${linkButtons(true)}</div>
       </div>
-      ${d.photo ? `<img src="${esc(d.photo)}" alt="Photo de ${esc(d.nom)}">` : ""}`;
+      ${d.photo ? `<img src="${esc(d.photo)}" alt="Photo de ${esc(d.nom)}">` : `<div class="monogram" aria-hidden="true">${esc(d.nom.split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase())}</div>`}`;
 
     section("apropos", "À propos", (d.apropos || []).map(p => `<p>${esc(p)}</p>`).join(""));
 
@@ -269,8 +275,10 @@
 
     section("langues", "Langues", (d.langues || []).length && `<div class="langs">${d.langues.map(l => `<span class="chip">${esc(l)}</span>`).join("")}</div>`);
 
+    section("interets", "Centres d'intérêt", (d.interets || []).length && `<div class="langs">${d.interets.map(i => `<span class="chip">${esc(i)}</span>`).join("")}</div>`);
+
     section("contact", "Contact", `
-      <p>Une opportunité, une question ou simplement envie d'échanger ? Le plus simple est de m'écrire sur LinkedIn.</p>
+      <p>${esc(d.contact || "Une opportunité, une question ou simplement envie d'échanger ? Le plus simple est de m'écrire sur LinkedIn.")}</p>
       <div class="actions">${linkButtons(false)}</div>`);
 
     $("footer").textContent = `© ${new Date().getFullYear()} ${d.nom}`;
