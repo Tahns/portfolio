@@ -123,7 +123,7 @@ window.PORTFOLIO = {
       actions: [
         "Notation de chaque risque : gravité × probabilité (score sur 16) et faisabilité",
         "Hiérarchisation dans une matrice et choix d'un risque prioritaire : le risque routier lié au parc automobile",
-        "Analyse des causes (pas de règle de plein au retour, clés et cartes carburant sans traçabilité…)",
+        "Analyse des causes et des conséquences, puis proposition de mesures de prévention",
       ],
       outils: ["Matrice des risques", "SST", "RGPD / cybersécurité"],
     },

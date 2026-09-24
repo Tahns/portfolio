@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mentions légales</title>
+  <meta name="description" content="Mentions légales et politique de confidentialité du portfolio.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <style>
+    :root {
+      --bg: #0b0a12; --surface: rgba(255,255,255,.04); --border: rgba(255,255,255,.09);
+      --text: #f4f2fb; --muted: #a6a2b8; --a1: #8b5cf6; --a2: #ec4899; --a3: #f59e0b;
+      color-scheme: dark;
+    }
+    :root[data-theme="light"] {
+      --bg: #fbfaff; --surface: rgba(255,255,255,.8); --border: rgba(20,16,40,.1);
+      --text: #16131f; --muted: #5b566e; --a1: #7c3aed; --a2: #db2777; --a3: #d97706;
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.7 "Plus Jakarta Sans", system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased;
+      background-image: radial-gradient(700px 400px at 10% -10%, color-mix(in srgb, var(--a1) 30%, transparent), transparent 70%),
+                        radial-gradient(600px 400px at 100% 0%, color-mix(in srgb, var(--a2) 20%, transparent), transparent 70%);
+      background-repeat: no-repeat;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    a { color: var(--text); text-decoration-color: var(--a2); text-underline-offset: 3px; }
+    .back { display: inline-flex; gap: 8px; font-weight: 700; font-size: 14px; text-decoration: none; color: var(--muted); }
+    .back:hover { color: var(--text); }
+    h1 { font-size: clamp(36px, 7vw, 56px); line-height: 1.05; letter-spacing: -.035em; margin: 32px 0 8px; }
+    h1 em {
+      font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+      background: linear-gradient(100deg, var(--a1), var(--a2) 50%, var(--a3)); -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .updated { color: var(--muted); font-size: 14px; margin: 0 0 40px; }
+    section { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px 28px; margin-bottom: 16px; }
+    h2 { font-size: 20px; letter-spacing: -.01em; margin: 0 0 12px; }
+    h3 { font-size: 16px; margin: 20px 0 6px; }
+    p, li { color: var(--muted); }
+    p { margin: 0 0 10px; }
+    ul { margin: 0 0 10px; padding-left: 20px; }
+    li { margin: 4px 0; }
+    strong { color: var(--text); }
+    .ok { display: grid; gap: 8px; list-style: none; padding: 0; }
+    .ok li { padding-left: 28px; position: relative; }
+    .ok li::before { content: "✓"; position: absolute; left: 4px; font-weight: 800; color: #22c55e; }
+    @media (max-width: 640px) { .wrap { padding: 32px 16px 64px; } section { padding: 20px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="./">← Retour au portfolio</a>
+    <h1>Mentions légales &amp; <em>confidentialité</em></h1>
+    <p class="updated">Dernière mise à jour : 24 septembre 2026</p>
+
+    <section>
+      <h2>En bref</h2>
+      <ul class="ok">
+        <li>Aucun cookie, aucune statistique de visite, aucune publicité, aucun traceur.</li>
+        <li>Aucun formulaire : je ne collecte aucune donnée sur vous.</li>
+        <li>Aucune ressource externe : les polices sont hébergées sur le site, rien n'est chargé depuis Google ou un réseau social.</li>
+        <li>Aucune donnée personnelle de tiers (collègues, locataires, clients) : les résultats sont présentés sous forme de chiffres globaux et anonymes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Éditeur du site</h2>
+      <p>Site personnel, à but non commercial, édité par <strong class="js-nom">Léo Dellouve</strong>, également directeur de la publication.</p>
+      <p>Contact : <a class="js-mail" href="#">par e-mail</a>.</p>
+    </section>
+
+    <section>
+      <h2>Hébergement</h2>
+      <p><strong>GitHub, Inc.</strong> (service GitHub Pages) — 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — <a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>Données personnelles</h2>
+
+      <h3>Les informations me concernant</h3>
+      <p>Mon nom, mon parcours, mon adresse e-mail et les liens vers mes profils LinkedIn et GitHub sont publiés <strong>volontairement, par moi-même</strong>, dans le cadre de ma recherche d'alternance. Je peux les modifier ou les retirer à tout moment. Mon adresse postale, mon numéro de téléphone et ma date de naissance ne sont volontairement pas publiés.</p>
+
+      <h3>Les visiteurs</h3>
+      <ul>
+        <li><strong>Préférence de thème (clair / sombre)</strong> : si vous changez de thème, votre choix est enregistré uniquement dans votre navigateur (stockage local, clé « theme »). Il n'est jamais transmis. Ce stockage sert seulement à la fonctionnalité que vous avez demandée : il est donc dispensé de consentement (article 82 de la loi Informatique et Libertés, lignes directrices de la CNIL). Vous pouvez l'effacer en supprimant les données du site dans votre navigateur.</li>
+        <li><strong>Bouton e-mail</strong> : il copie mon adresse dans votre presse-papiers et ouvre votre messagerie. Tout se passe sur votre appareil, rien n'est envoyé au site.</li>
+        <li><strong>Journaux techniques de l'hébergeur</strong> : comme tout hébergeur, GitHub peut enregistrer des données techniques de connexion (dont l'adresse IP) pour assurer la sécurité et le bon fonctionnement du service. Ce traitement, qui peut impliquer un transfert vers les États-Unis, relève de GitHub : voir sa <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">déclaration de confidentialité</a>. Je n'ai pas accès à ces journaux.</li>
+        <li><strong>Liens externes</strong> (LinkedIn, GitHub, projet Hémicycle) : en cliquant, vous quittez ce site et la politique de confidentialité du site visité s'applique. Aucune information de provenance n'est transmise (politique « no-referrer »).</li>
+      </ul>
+
+      <h3>Si vous m'écrivez</h3>
+      <p>Votre adresse e-mail et le contenu de votre message servent uniquement à vous répondre et à échanger sur une éventuelle opportunité (base légale : mesures précontractuelles prises à votre demande et intérêt légitime à vous répondre). Ils ne sont ni cédés ni utilisés à d'autres fins, et sont supprimés au plus tard trois ans après notre dernier échange.</p>
+
+      <h3>Vos droits</h3>
+      <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur les données vous concernant. Pour les exercer, écrivez-moi <a class="js-mail" href="#">par e-mail</a>. Vous pouvez aussi adresser une réclamation à la <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">CNIL</a>.</p>
+    </section>
+
+    <section>
+      <h2>Propriété intellectuelle</h2>
+      <p>Les textes du site sont la propriété de leur auteur. Les noms des entreprises et organismes cités (Partenord Habitat, Kiloutou, Fives, Picnic, Stellantis…) appartiennent à leurs titulaires respectifs : ils servent uniquement à décrire mon parcours et n'impliquent aucune approbation de leur part. Les informations sur mes employeurs se limitent à des éléments publics et à la description de mes missions.</p>
+      <p>Polices Plus Jakarta Sans et Instrument Serif : licence SIL Open Font License 1.1.</p>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    const d = window.PORTFOLIO || {};
+    const mail = (d.liens || {}).email;
+    if (d.nom) document.querySelectorAll(".js-nom").forEach(el => el.textContent = d.nom);
+    document.querySelectorAll(".js-mail").forEach(a => {
+      if (mail) { a.href = "mailto:" + mail; a.textContent = mail; }
+      else a.replaceWith(document.createTextNode("via LinkedIn"));
+    });
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</body>
+</html>

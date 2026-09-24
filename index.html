@@ -6,9 +6,10 @@
   <title>Portfolio</title>
   <meta name="description" content="Léo Dellouve — assistant d'agence en alternance (BTS Gestion de la PME), en recherche d'alternance RH en droit social et paie pour la rentrée 2027.">
   <meta name="theme-color" content="#0b0a12">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Confidentialité : aucune ressource externe n'est chargée (ni police, ni script, ni statistique). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <style>
     :root {
       --bg: #0b0a12;
@@ -520,9 +521,9 @@
       <p class="typing reveal" style="--d:.16s"><span class="word" id="typed">${esc(list(d.roles)[0] || d.titre)}</span><span class="caret" aria-hidden="true"></span></p>
       <p class="pitch reveal" style="--d:.24s">${esc(d.accroche)}</p>
       <div class="actions reveal" style="--d:.32s">
-        ${l.linkedin ? `<a class="btn primary" href="${esc(l.linkedin)}" target="_blank" rel="noopener">${icons.linkedin}Voir mon LinkedIn</a>` : ""}
+        ${l.linkedin ? `<a class="btn primary" href="${esc(l.linkedin)}" target="_blank" rel="noopener noreferrer">${icons.linkedin}Voir mon LinkedIn</a>` : ""}
         ${mailButton("M'écrire")}
-        ${l.cv ? `<a class="btn" href="${esc(l.cv)}" target="_blank" rel="noopener">${icons.download}Télécharger mon CV</a>` : ""}
+        ${l.cv ? `<a class="btn" href="${esc(l.cv)}" target="_blank" rel="noopener noreferrer">${icons.download}Télécharger mon CV</a>` : ""}
       </div>
       <a class="scroll-hint reveal" style="--d:.5s" href="#apropos"><span class="mouse"></span>Découvrir mon parcours</a>`;
 
@@ -672,8 +673,8 @@
                 <p>${esc(p.description)}</p>
                 ${list(p.tags).length ? `<div class="chips">${p.tags.map(t => `<span class="chip">${esc(t)}</span>`).join("")}</div>` : ""}
                 <div class="p-links">
-                  ${p.lien ? `<a class="btn primary" href="${esc(p.lien)}" target="_blank" rel="noopener">Voir le site ${icons.arrow}</a>` : ""}
-                  ${p.code ? `<a class="btn" href="${esc(p.code)}" target="_blank" rel="noopener">${icons.github}Code source</a>` : ""}
+                  ${p.lien ? `<a class="btn primary" href="${esc(p.lien)}" target="_blank" rel="noopener noreferrer">Voir le site ${icons.arrow}</a>` : ""}
+                  ${p.code ? `<a class="btn" href="${esc(p.code)}" target="_blank" rel="noopener noreferrer">${icons.github}Code source</a>` : ""}
                 </div>
               </div>
               <div class="p-visual">${i === 0 ? hemi : ""}</div>
@@ -690,15 +691,16 @@
           <p>${esc(d.contact || "Une opportunité ou une question ? Écrivez-moi.")}</p>
           <div class="actions">
             ${mailButton()}
-            ${l.linkedin ? `<a class="btn" href="${esc(l.linkedin)}" target="_blank" rel="noopener">${icons.linkedin}LinkedIn</a>` : ""}
+            ${l.linkedin ? `<a class="btn" href="${esc(l.linkedin)}" target="_blank" rel="noopener noreferrer">${icons.linkedin}LinkedIn</a>` : ""}
           </div>
         </div>
       </section>
       <footer>
         <span>© ${new Date().getFullYear()} ${esc(d.nom)}${d.localisation ? ` · ${esc(d.localisation)}` : ""}</span>
         <span>
-          ${l.linkedin ? `<a href="${esc(l.linkedin)}" target="_blank" rel="noopener">LinkedIn</a> · ` : ""}
-          ${l.github ? `<a href="${esc(l.github)}" target="_blank" rel="noopener">GitHub</a> · ` : ""}
+          ${l.linkedin ? `<a href="${esc(l.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a> · ` : ""}
+          ${l.github ? `<a href="${esc(l.github)}" target="_blank" rel="noopener noreferrer">GitHub</a> · ` : ""}
+          <a href="mentions-legales.html">Mentions légales &amp; confidentialité</a> ·
           <a href="#top">Haut de page ↑</a>
         </span>
       </footer>`);
