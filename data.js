@@ -16,7 +16,7 @@ window.PORTFOLIO = {
   liens: {
     linkedin: "https://www.linkedin.com/in/leo-dellouve/",
     github: "https://github.com/Tahns",
-    email: "klayoffe@gmail.com",
+    email: "leodellouve11@gmail.com",
     cv: "", // ex : "cv.pdf" (dépose le fichier dans le dépôt)
   },
 
