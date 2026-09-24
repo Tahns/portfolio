@@ -6,84 +6,104 @@
 
 window.PORTFOLIO = {
   nom: "Léo Dellouve",
-  titre: "Technicien en maintenance des systèmes · Développeur web autodidacte",
-  localisation: "Métropole lilloise (Nord) · Permis B",
+  titre: "Assistant d'agence en alternance · BTS Gestion de la PME",
+  localisation: "Lille, Hauts-de-France",
   accroche:
-    "Formé à la maintenance industrielle en alternance, j'aime comprendre comment les choses fonctionnent, trouver la panne et la réparer. En parallèle, je conçois des sites web qui vont chercher et vérifier leurs données tout seuls.",
+    "Reconverti après plusieurs années en maintenance industrielle, je construis mon parcours vers les ressources humaines. Je recherche une alternance RH en droit social et paie à partir de septembre 2027.",
   photo: "", // ex : "photo.jpg" (dépose le fichier dans le dépôt) — sinon tes initiales s'affichent
-  disponible: "En recherche d'alternance · licence pro 2027",
+  disponible: "Recherche alternance RH · Droit social & Paie · rentrée 2027",
 
   liens: {
     linkedin: "https://www.linkedin.com/in/leo-dellouve/",
     github: "https://github.com/Tahns",
-    email: "", // ex : "prenom.nom@mail.com"
+    email: "klayoffe@gmail.com",
     cv: "", // ex : "cv.pdf" (dépose le fichier dans le dépôt)
   },
 
   apropos: [
-    "Après un bac STI2D, j'ai préparé un BTS Maintenance des systèmes en alternance à l'AFPI de Marcq-en-Barœul, chez Kiloutou et Fives ECL. Diagnostic de pannes, commandes de pièces, remise en état de machines : j'y ai appris la rigueur du terrain.",
-    "Curieux et créatif, je développe aussi en autodidacte : des sites web, des outils qui automatisent la collecte de données publiques, et des extensions de jeux vidéo. Je cherche aujourd'hui une alternance pour poursuivre en licence professionnelle.",
+    "Après un bac STI2D et un BTS Maintenance des systèmes en alternance, j'ai travaillé plusieurs années sur le terrain, en maintenance industrielle puis en logistique. J'ai ensuite pris le temps de redéfinir mon projet professionnel autour de la gestion d'entreprise et des ressources humaines.",
+    "Aujourd'hui en alternance comme assistant d'agence chez Partenord Habitat, dans le cadre d'un BTS Gestion de la PME, je poursuivrai à la rentrée 2027 avec une licence / bachelor RH spécialité droit social et paie. Mon objectif\u00a0: évoluer vers la gestion administrative du personnel, la paie et les relations sociales.",
+    "Rigoureux, autonome et à l'aise avec les outils de gestion (CRM, tableaux de bord, circuits de validation), je recherche une entreprise pour m'accueillir en alternance à partir de septembre 2027.",
   ],
 
   experiences: [
     {
-      poste: "Technicien de maintenance en alternance",
-      entreprise: "Kiloutou · Fives ECL",
-      periode: "2022 — 2024",
+      poste: "Assistant d'agence — alternance",
+      entreprise: "Partenord Habitat · Lille",
+      periode: "Sept. 2025 — Aujourd'hui",
+      description: "Rattaché au directeur d'agence, dans le cadre du BTS Gestion de la PME.",
+      missions: [
+        "Gestion de la correspondance et mise à jour du CRM",
+        "Suivi des tableaux de bord et validation des documents via le parapheur iXBus",
+        "Application de la démarche qualité Qualibail",
+        "Gestion du parc automobile de l'agence (5 véhicules, Lille et Lomme) : validation des réservations, suivi de l'entretien via CarFleet",
+      ],
+    },
+    {
+      poste: "Préparateur de commandes",
+      entreprise: "Picnic Technologies · Lesquin",
+      periode: "Sept. 2024 — Juil. 2025",
       description:
-        "Diagnostic de pannes, commandes de pièces et remontage sur un parc de machines de location variées (aspirateurs, pilonneuses, groupes électrogènes, nettoyeurs haute pression…). Accompagnement des vérifications générales périodiques (VGP). Mise en place d'un déshuileur de machine et d'un système anti-débordement de lubrifiant.",
+        "Préparation et contrôle des commandes clients en entrepôt logistique, dans le respect des délais et des standards de qualité.",
+    },
+    {
+      poste: "Responsable de projet — stage de fin d'études",
+      entreprise: "Fives · Ronchin",
+      periode: "Avr. 2024 — Mai 2024",
+      description:
+        "Participation à la gestion d'un projet industriel : planification des tâches, suivi des bons de commande et coordination avec les équipes.",
+    },
+    {
+      poste: "Technicien de maintenance — alternance",
+      entreprise: "Groupe Kiloutou · Lesquin",
+      periode: "Sept. 2022 — Avr. 2024",
+      description:
+        "Maintenance de matériel de location professionnel : diagnostic de pannes, entretien préventif et réparations.",
     },
   ],
 
   formation: [
     {
-      diplome: "BTS Maintenance des systèmes (option A, systèmes de production) — en alternance",
-      ecole: "AFPI · Marcq-en-Barœul",
+      diplome: "BTS Gestion de la PME — en alternance (en cours)",
+      ecole: "Alésia Formation",
+      periode: "2025 — 2027",
+    },
+    {
+      diplome: "BTS Maintenance des systèmes — en alternance",
+      ecole: "AFPI",
       periode: "2022 — 2024",
     },
     {
-      diplome: "Habilitation électrique basse tension (H0V, BR, BC, B2V)",
-      ecole: "Certification",
-      periode: "2024",
-    },
-    {
       diplome: "Baccalauréat STI2D",
-      ecole: "Lycée Baggio · Lille",
-      periode: "2022",
+      ecole: "Lycée César Baggio · Lille",
+      periode: "2019 — 2022",
     },
   ],
 
   competences: [
-    { groupe: "Maintenance", items: ["Diagnostic de pannes", "Remise en état", "Commande de pièces", "Suivi VGP", "Habilitation électrique BT"] },
-    { groupe: "Conception 3D", items: ["Autodesk Inventor", "SolidWorks", "Onshape"] },
-    { groupe: "Web & données", items: ["HTML", "CSS", "JavaScript", "Node.js", "SQL", "GitHub Actions"] },
-    { groupe: "Bureautique", items: ["Word", "Excel", "PowerPoint"] },
-    { groupe: "Audio", items: ["Reaper", "Mixage de voix"] },
-    { groupe: "Qualités", items: ["Discret", "Dynamique", "Créatif", "Curieux"] },
+    { groupe: "RH & juridique", items: ["Gestion de la paie", "Droit social"] },
+    { groupe: "Gestion & administration", items: ["CRM", "Tableaux de bord", "Parapheur iXBus", "Démarche qualité Qualibail", "Gestion de parc automobile (CarFleet)"] },
+    { groupe: "Outils", items: ["Word", "Excel", "PowerPoint", "HTML / CSS / JavaScript"] },
+    { groupe: "Qualités", items: ["Rigoureux", "Autonome", "Curieux", "Dynamique"] },
   ],
 
   projets: [
     {
       nom: "Hémicycle — la politique française, preuves à l'appui",
       description:
-        "Site de transparence parlementaire mis à jour automatiquement chaque jour : votes des députés groupe par groupe, scrutins du Sénat, sondages 2027 et chiffres de l'Insee. Chaque donnée est recoupée avec sa source officielle avant d'être publiée.",
-      tags: ["JavaScript", "Node.js", "Open data", "GitHub Actions"],
+        "Projet personnel : un site de transparence parlementaire mis à jour automatiquement chaque jour. Votes des députés groupe par groupe, scrutins du Sénat, sondages 2027 et chiffres de l'Insee, chaque donnée étant recoupée avec sa source officielle.",
+      tags: ["Institutions", "Open data", "JavaScript"],
       lien: "https://tahns.github.io/politique-france/",
       code: "https://github.com/Tahns/politique-france",
     },
-    {
-      nom: "Fiche personnage interactive",
-      description:
-        "Un livre animé en HTML/CSS/JS : les pages se tournent pour présenter l'histoire, les ambitions et l'apparence d'un personnage de jeu de rôle.",
-      tags: ["HTML", "CSS", "JavaScript"],
-      lien: "https://tahns.github.io/senju.github.io/",
-      code: "https://github.com/Tahns/senju.github.io",
-    },
   ],
 
-  langues: ["Français — langue maternelle", "Anglais — B1"],
+  certifications: ["Elements of AI", "Microsoft Learn — AI Fundamentals"],
 
-  interets: ["Course à pied", "Musculation", "Extensions de jeux vidéo", "Mixage de voix", "Voyage"],
+  langues: ["Français — langue maternelle", "Anglais — professionnel", "Portugais — notions"],
 
-  contact: "Vous proposez une alternance ou vous souhaitez échanger\u00a0? Écrivez-moi sur LinkedIn.",
+  interets: ["Course à pied", "Musculation", "Voyage", "Mixage de voix"],
+
+  contact:
+    "Vous recrutez un alternant RH pour septembre 2027\u00a0? Écrivez-moi par email ou sur LinkedIn.",
 };

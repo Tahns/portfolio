@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio</title>
-  <meta name="description" content="Léo Dellouve — technicien en maintenance des systèmes et développeur web autodidacte. Parcours, compétences et projets.">
+  <meta name="description" content="Léo Dellouve — assistant d'agence en alternance (BTS Gestion de la PME), en recherche d'alternance RH en droit social et paie pour la rentrée 2027.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
@@ -124,6 +124,9 @@
     .item h3 { margin: 0; font-size: 17px; font-weight: 600; }
     .item .where { color: var(--accent); font-weight: 500; font-size: 15px; }
     .item p { margin: 6px 0 0; color: var(--muted); }
+    .item ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+    .item li { margin: 2px 0; }
+    .item li::marker { color: var(--accent); }
 
     .skills { display: grid; gap: 18px; }
     .skill-row { display: grid; grid-template-columns: 170px 1fr; gap: 24px; align-items: start; }
@@ -184,6 +187,7 @@
     <section id="formation"></section>
     <section id="competences"></section>
     <section id="projets"></section>
+    <section id="certifications"></section>
     <section id="langues"></section>
     <section id="interets"></section>
     <section class="contact" id="contact"></section>
@@ -244,6 +248,7 @@
           <h3>${esc(e.poste)}</h3>
           <div class="where">${esc(e.entreprise)}</div>
           ${e.description ? `<p>${esc(e.description)}</p>` : ""}
+          ${(e.missions || []).length ? `<ul>${e.missions.map(m => `<li>${esc(m)}</li>`).join("")}</ul>` : ""}
         </div>
       </div>`).join("")}</div>`);
 
@@ -274,6 +279,8 @@
       </article>`).join("")}</div>`);
 
     section("langues", "Langues", (d.langues || []).length && `<div class="langs">${d.langues.map(l => `<span class="chip">${esc(l)}</span>`).join("")}</div>`);
+
+    section("certifications", "Certifications", (d.certifications || []).length && `<div class="langs">${d.certifications.map(c => `<span class="chip">${esc(c)}</span>`).join("")}</div>`);
 
     section("interets", "Centres d'intérêt", (d.interets || []).length && `<div class="langs">${d.interets.map(i => `<span class="chip">${esc(i)}</span>`).join("")}</div>`);
 
