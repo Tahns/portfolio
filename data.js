@@ -253,12 +253,12 @@ window.PORTFOLIO = {
 
   projets: [
     {
-      nom: "Hémicycle — la politique française, preuves à l'appui",
+      nom: "Hémicycle France — la politique française, preuves à l'appui",
       description:
-        "Projet personnel : un site de transparence parlementaire mis à jour automatiquement chaque jour. Votes des députés groupe par groupe, scrutins du Sénat, sondages 2027 et chiffres de l'Insee, chaque donnée étant recoupée avec sa source officielle.",
-      tags: ["Institutions", "Open data", "JavaScript"],
-      lien: "https://tahns.github.io/politique-france/",
-      code: "https://github.com/Tahns/politique-france",
+        "Projet personnel : un site de transparence politique mis à jour automatiquement chaque jour. Votes des députés groupe par groupe, fiche de chaque député, scrutins du Sénat, candidats et sondages 2027, dirigeants des partis et chiffres de l'Insee. Chaque donnée est recoupée avec sa source officielle avant d'être publiée.",
+      tags: ["Institutions", "Open data", "JavaScript", "Automatisation"],
+      lien: "https://tahns.github.io/hemicycle-france/",
+      code: "https://github.com/Tahns/hemicycle-france",
     },
   ],
 
