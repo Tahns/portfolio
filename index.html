@@ -227,7 +227,11 @@
     .project p { color: var(--muted); margin: 0; }
     .p-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 6px; }
     .p-visual { position: relative; min-height: 280px; background: var(--bg-alt); border-left: 1px solid var(--line); }
-    .hemi { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 82%; max-width: 380px; }
+    .p-visual { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 28px; }
+    .hemi { width: 100%; max-width: 400px; height: auto; }
+    .p-brand { align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; font: 600 16px Fraunces, Georgia, serif; color: var(--ink); background: var(--surface); border: 1px solid var(--line); padding: 6px 14px 6px 8px; border-radius: 999px; }
+    .p-brand svg { width: 26px; height: 26px; color: var(--ink); }
+    .p-caption { font-size: 13px; font-weight: 600; color: var(--muted); text-align: center; }
 
     /* Contact */
     .contact { margin: 112px 0 0; padding: 72px 40px; border-radius: 28px; background: var(--primary); color: var(--primary-ink); text-align: center; position: relative; overflow: hidden; }
@@ -569,17 +573,30 @@
         </section>`);
     }
 
-    // Projet personnel (le premier est illustré par un hémicycle)
-    if (list(d.projets).length) {
+    // Projet personnel : hémicycle fidèle (un point par siège, couleurs des groupes)
+    const hemicycleSvg = h => {
+      const groupes = list(h && h.groupes);
+      const total = groupes.reduce((n, g) => n + (+g.sieges || 0), 0);
+      if (!total) return "";
+      const rows = Math.max(4, Math.round(Math.sqrt(total / 4))), rIn = 72, rOut = 188, cx = 200, cy = 196;
+      const radii = Array.from({ length: rows }, (_, i) => rIn + (rOut - rIn) * i / (rows - 1));
+      const sumR = radii.reduce((a, r) => a + r, 0);
+      const per = radii.map(r => Math.round(total * r / sumR));
+      per[rows - 1] += total - per.reduce((a, n) => a + n, 0);
       const seats = [];
-      const colors = ["var(--primary)", "var(--sage)", "var(--accent)", "var(--line-strong)"];
-      [[7, 70], [11, 100], [15, 130], [19, 160]].forEach(([n, r]) => {
-        for (let k = 0; k < n; k++) {
-          const a = Math.PI - (Math.PI * (k + .5)) / n;
-          seats.push(`<circle cx="${(200 + Math.cos(a) * r).toFixed(1)}" cy="${(185 - Math.sin(a) * r).toFixed(1)}" r="7.5" fill="${colors[Math.min(3, Math.floor((k / n) * 4))]}"/>`);
-        }
-      });
-      const hemi = `<svg class="hemi" viewBox="20 10 360 190" aria-hidden="true">${seats.join("")}</svg>`;
+      radii.forEach((r, i) => { for (let k = 0; k < per[i]; k++) { const a = Math.PI * (1 - (k + .5) / per[i]); seats.push({ a, x: cx + Math.cos(a) * r, y: cy - Math.sin(a) * r }); } });
+      seats.sort((p, q) => q.a - p.a);
+      const dot = Math.min(4.6, (rOut - rIn) / (rows - 1) * .42);
+      let gi = 0, used = 0;
+      const circles = seats.map(st => {
+        while (gi < groupes.length - 1 && used >= groupes[gi].sieges) { gi++; used = 0; }
+        used++;
+        return `<circle cx="${st.x.toFixed(1)}" cy="${st.y.toFixed(1)}" r="${dot.toFixed(2)}" fill="${esc(groupes[gi].couleur)}"/>`;
+      }).join("");
+      return `<svg class="hemi" viewBox="4 0 392 204" role="img" aria-label="${esc(h.legende || "Hémicycle")}">${circles}</svg>`;
+    };
+    const hemiLogo = `<svg viewBox="4 6 56 56" aria-hidden="true"><path d="M8 46a24 24 0 0 1 48 0" fill="none" stroke="#1B3A8C" stroke-width="8" stroke-linecap="round"/><path d="M20 46a12 12 0 0 1 24 0" fill="none" stroke="#C8102E" stroke-width="8" stroke-linecap="round"/><circle cx="32" cy="46" r="4" fill="currentColor"/></svg>`;
+    if (list(d.projets).length) {
       S.push(`
         <section id="projets">
           ${kicker("Projet personnel")}
@@ -597,7 +614,12 @@
                   ${p.code ? `<a class="btn" href="${esc(p.code)}" ${ext}>${icons.github}Code source</a>` : ""}
                 </div>
               </div>
-              <div class="p-visual">${i === 0 ? hemi : ""}</div>
+              <div class="p-visual">
+                ${p.hemicycle ? `
+                  <div class="p-brand">${hemiLogo}<span>${esc(p.nom.split(" — ")[0])}</span></div>
+                  ${hemicycleSvg(p.hemicycle)}
+                  ${p.hemicycle.legende ? `<div class="p-caption">${esc(p.hemicycle.legende)}</div>` : ""}` : ""}
+              </div>
             </article>`).join("")}
         </section>`);
     }

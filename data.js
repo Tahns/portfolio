@@ -259,6 +259,25 @@ window.PORTFOLIO = {
       tags: ["Institutions", "Open data", "JavaScript", "Automatisation"],
       lien: "https://tahns.github.io/hemicycle-france/",
       code: "https://github.com/Tahns/hemicycle-france",
+      // Illustration : composition de l'Assemblée nationale (couleurs du site Hémicycle France),
+      // de gauche à droite. Source : open data de l'Assemblée, 24 septembre 2026.
+      hemicycle: {
+        legende: "Composition de l'Assemblée nationale · 577 sièges",
+        groupes: [
+          { id: "LFI", couleur: "#D6284B", sieges: 71 },
+          { id: "GDR", couleur: "#A32E22", sieges: 17 },
+          { id: "ECO", couleur: "#1E9F58", sieges: 38 },
+          { id: "SOC", couleur: "#D6488A", sieges: 67 },
+          { id: "LIOT", couleur: "#A67C0A", sieges: 23 },
+          { id: "EPR", couleur: "#E0B400", sieges: 90 },
+          { id: "DEM", couleur: "#E08800", sieges: 37 },
+          { id: "HOR", couleur: "#0FA89C", sieges: 36 },
+          { id: "LR", couleur: "#2F6FE0", sieges: 48 },
+          { id: "UDR", couleur: "#1E44B0", sieges: 17 },
+          { id: "RN", couleur: "#5B4FC9", sieges: 122 },
+          { id: "NI", couleur: "#6B6E78", sieges: 11 },
+        ],
+      },
     },
   ],
 
